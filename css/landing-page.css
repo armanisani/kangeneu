@@ -124,6 +124,7 @@ h6 {
 .passy {
   background: url(../img/kudrop1.jpg) no-repeat center center;
   background-size: contain;
+  border: none;
 }
 .banner h2 {
     margin: 0;
