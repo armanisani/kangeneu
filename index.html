@@ -31,20 +31,39 @@
 </head>
 
 <body>
-  <div class="container passy" style="padding-bottom: 50px;width: 100%; height: 100%;padding-top: 50%">
-    <form style="padding: 0 20%"class="" action="index.html" method="post">
-      <fieldset class="form-group">
-      <label for="exampleInputEmail1">Username</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Username">
-    </fieldset>
-    <fieldset class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </fieldset>
-    <button type="submit" class="pull-right btn btn-primary">Submit</button>
-        </form>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+      </div>
+      <div class="modal-body">
+        <form style="padding: 0 20%"class="" action="index.html" method="post">
+          <fieldset class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="Username">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </fieldset>
+        <div class="modal-footer">
+
+        <button id="subbutt" type="button" class="pull-right btn btn-primary">Submit</button>
+            </form>
+            </div>
+      </div>
+
+    </div>
   </div>
-<div class="hide">
+</div>
+  <button id="introbutt"type="button" data-toggle="modal" data-target="#myModal" class="container passy" style="padding-bottom: 50px;width: 100%; height: 100%;padding-top: 50%">
+
+  </button>
+<div id="site"class="hide">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
@@ -327,7 +346,16 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    <script type="text/javascript">
+      $('#subbutt').click(function(){
+        if (($('#username').val() == "hassan") && ($('#password').val() == 1234)) {
+          $('#site').removeClass('hide')
+          $('#introbutt').addClass('hide')
+          $('#myModal').modal('toggle')
+        }
+      }
+      )
+    </script>
 </body>
 
 </html>
